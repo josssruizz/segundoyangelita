@@ -378,18 +378,37 @@
         }
       }
 
-      .carousel-inner img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 10px;
+      .scroll-gallery {
+        overflow: hidden;
+        position: relative;
       }
 
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-        padding: 10px;
+      .scroll-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-track 30s linear infinite;
+        gap: 20px;
+      }
 
+      .scroll-track img {
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .scroll-track img:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes scroll-track {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
     </style>
   </head>
@@ -449,23 +468,46 @@
       </div>
     </section>
 
-<!-- CARRUSEL DE FOTOS -->
+    <!-- CARRUSEL DE FOTOS -->
     <section class="section" id="carousel">
       <div class="container">
-        <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://i.postimg.cc/MHJj097y/IMG-20250510-WA0006.jpg" alt="Foto 1">
-            </div>
-            <div class="carousel-item">
-              <img src="https://i.postimg.cc/26ZZBsZk/IMG-20250510-WA0008.jpg" alt="Foto 2">
-            </div>
-            <div class="carousel-item">
-              <img src="https://i.postimg.cc/q7gnphBC/IMG-20250510-WA0005.jpg" alt="Foto 3">
-            </div>
-            <div class="carousel-item">
-              <img src="https://i.postimg.cc/cJj3Cx6k/IMG-20250510-WA0007.jpg" alt="Foto 4">
-            </div>
+        <div class="scroll-gallery">
+          <div class="scroll-track">
+            <!-- Primer grupo de imágenes -->
+            <img
+              src="https://i.postimg.cc/MHJj097y/IMG-20250510-WA0006.jpg"
+              alt="Foto 1"
+            />
+            <img
+              src="https://i.postimg.cc/26ZZBsZk/IMG-20250510-WA0008.jpg"
+              alt="Foto 2"
+            />
+            <img
+              src="https://i.postimg.cc/q7gnphBC/IMG-20250510-WA0005.jpg"
+              alt="Foto 3"
+            />
+            <img
+              src="https://i.postimg.cc/cJj3Cx6k/IMG-20250510-WA0007.jpg"
+              alt="Foto 4"
+            />
+
+            <!-- Copia del grupo para efecto bucle -->
+            <img
+              src="https://i.postimg.cc/MHJj097y/IMG-20250510-WA0006.jpg"
+              alt="Foto 1"
+            />
+            <img
+              src="https://i.postimg.cc/26ZZBsZk/IMG-20250510-WA0008.jpg"
+              alt="Foto 2"
+            />
+            <img
+              src="https://i.postimg.cc/q7gnphBC/IMG-20250510-WA0005.jpg"
+              alt="Foto 3"
+            />
+            <img
+              src="https://i.postimg.cc/cJj3Cx6k/IMG-20250510-WA0007.jpg"
+              alt="Foto 4"
+            />
           </div>
         </div>
       </div>
